@@ -1,0 +1,41 @@
+# Ignore build directories
+/build/
+# Ignore CMake-related files
+CMakeCache.txt
+CMakeFiles/
+CMakeLists.txt.user
+CMakeLists.txt.cmake
+
+# Ignore object files and executables
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+
+# Ignore IDE files
+.vs/
+.vscode/
+.idea/
+*.xcuserdata
+*.xcworkspace
+*.xcodeproj/project.xcworkspace/xcuserdata
+
+# Ignore temporary files and logs
+*.log
+*.tmp
+*.swp
+*.bak
+*.DS_Store
+
+# Ignore debug/release directories
+/debug/
+*/debug/
+*/release/
+
+# Ignore dependency manager directories
+/vcpkg/
+/.conan/
