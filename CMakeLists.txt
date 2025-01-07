@@ -5,11 +5,31 @@ project(appointment_project VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(appointment_project src/main.cpp)
+# Specify include directories for the project
+include_directories(
+    ${CMAKE_SOURCE_DIR}/include              # Main include directory
+    ${CMAKE_SOURCE_DIR}/include/models       # Header files for models
+    ${CMAKE_SOURCE_DIR}/include/controllers  # Header files for controllers
+    ${CMAKE_SOURCE_DIR}/include/database     # Header files for database interaction
+    ${CMAKE_SOURCE_DIR}/include/utils        # Header files for utility functions
+)
 
-include(CTest)
-enable_testing()
+# Add source files for the project
+file(GLOB SOURCES
+    ${CMAKE_SOURCE_DIR}/src/*.cpp           # General source files
+    ${CMAKE_SOURCE_DIR}/src/models/*.cpp    # Model-related source files
+    ${CMAKE_SOURCE_DIR}/src/controllers/*.cpp # Controller-related source files
+    ${CMAKE_SOURCE_DIR}/src/database/*.cpp   # Database-related source files
+    ${CMAKE_SOURCE_DIR}/src/utils/*.cpp      # Utility source files
+)
 
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+# Create the executable for the main application
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+# Find and link SQLite3
+find_package(SQLite3 REQUIRED)
+target_link_libraries(${PROJECT_NAME} SQLite::SQLite3)
+
+# Setup packaging and versioning (optional)
+
 include(CPack)
