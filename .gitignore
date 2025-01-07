@@ -1,41 +1,17 @@
-# Ignore build directories
-/build/
-# Ignore CMake-related files
-CMakeCache.txt
+# Ignore CMake generated files
 CMakeFiles/
-CMakeLists.txt.user
-CMakeLists.txt.cmake
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
 
-# Ignore object files and executables
-*.o
-*.a
-*.so
-*.dylib
-*.dll
-*.exe
-*.out
-*.app
+# Ignore macOS system files
+.DS_Store
 
-# Ignore IDE files
-.vs/
-.vscode/
-.idea/
-*.xcuserdata
-*.xcworkspace
-*.xcodeproj/project.xcworkspace/xcuserdata
+# Ignore testing-related files
+CTestTestfile.cmake
+CPackConfig.cmake
+CPackSourceConfig.cmake
+DartConfiguration.tcl
 
-# Ignore temporary files and logs
-*.log
-*.tmp
-*.swp
-*.bak
-*.DS_Store
-
-# Ignore debug/release directories
-/debug/
-*/debug/
-*/release/
-
-# Ignore dependency manager directories
-/vcpkg/
-/.conan/
+# Optional: Ignore the build directory
+/build/
