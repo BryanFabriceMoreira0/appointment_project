@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/Users/bryanmoreira/Code/C++/appointment_project/build",
-  "command": "/Library/Developer/CommandLineTools/usr/bin/c++   -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/appointment_project.dir/src/main.cpp.o -c /Users/bryanmoreira/Code/C++/appointment_project/src/main.cpp",
-  "file": "/Users/bryanmoreira/Code/C++/appointment_project/src/main.cpp",
-  "output": "CMakeFiles/appointment_project.dir/src/main.cpp.o"
-}
-]
