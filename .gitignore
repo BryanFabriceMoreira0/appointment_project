@@ -15,3 +15,6 @@ DartConfiguration.tcl
 
 # Optional: Ignore the build directory
 /build/
+
+#vscode related files 
+.vscode/
