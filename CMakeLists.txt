@@ -5,6 +5,8 @@ project(appointment_project VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+
 # Specify include directories for the project
 include_directories(
     ${CMAKE_SOURCE_DIR}/include              # Main include directory

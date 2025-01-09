@@ -10,11 +10,12 @@ class Database
 private:
     Database(); // Private constructor to use the singleton pattern
     ~Database();
+    static std::string getDatabasePath(); 
 
     sqlite3 *_db; //
 
 public:
-   static Database &GetInstance();
+    static Database &GetInstance();
 };
 
 #endif // DATABASE_H

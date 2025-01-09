@@ -18,3 +18,6 @@ DartConfiguration.tcl
 
 #vscode related files 
 .vscode/
+
+#data related folder 
+data/
