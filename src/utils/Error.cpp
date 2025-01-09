@@ -5,7 +5,7 @@
 #include "Error.h"
 
 /// @brief Log the error into the log file
-void Error::logError(const std::string &Message,const std::string &File,const int Line)
+void Error::logError(const std::string &Message)
 {
     // Construct the log file path
     std::filesystem::path logFilePath = std::filesystem::current_path().parent_path() / "include" /"utils" / "Error.log";
@@ -21,5 +21,5 @@ void Error::logError(const std::string &Message,const std::string &File,const in
     }
 
     // Write the error message to the log file
-    logFile << Message << " at " << File << ": "  << Line << std::endl;
+    logFile << Message << std::endl;
 }

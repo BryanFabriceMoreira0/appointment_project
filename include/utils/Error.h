@@ -19,7 +19,7 @@ enum class errorcode
 class Error
 {
 public:
-    static void logError(const std::string &Message, const std::string &File, const int Line);
+    static void logError(const std::string &Message);
 };
 
 #endif // ERROR_H
