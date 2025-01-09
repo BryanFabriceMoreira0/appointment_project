@@ -5,9 +5,7 @@ project(appointment_project VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
-
-# Specify include directories for the project
+# Specify include directories for the project using target_include_directories
 include_directories(
     ${CMAKE_SOURCE_DIR}/include              # Main include directory
     ${CMAKE_SOURCE_DIR}/include/models       # Header files for models
@@ -16,7 +14,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/include/utils        # Header files for utility functions
 )
 
-# Add source files for the project
+# Add source files for the project, including all subdirectories
 file(GLOB SOURCES
     ${CMAKE_SOURCE_DIR}/src/*.cpp           # General source files
     ${CMAKE_SOURCE_DIR}/src/models/*.cpp    # Model-related source files
@@ -32,6 +30,10 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 find_package(SQLite3 REQUIRED)
 target_link_libraries(${PROJECT_NAME} SQLite::SQLite3)
 
-# Setup packaging and versioning (optional)
+# Link additional libraries (if necessary)
 
+# Optionally set the C++17 standard flags, although CMake already handles it
+target_compile_options(${PROJECT_NAME} PRIVATE -std=c++17)
+
+# Setup packaging and versioning (optional)
 include(CPack)

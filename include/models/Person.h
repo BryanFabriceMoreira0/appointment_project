@@ -1,7 +1,7 @@
 #ifndef PATIENT_H
 #define PATIENT_H
 
-#include "ErrorCode.h"
+#include "Error.h"
 #include <string>
 
 /// @brief Abstract base  representing a Person in term of relevant informations
@@ -16,16 +16,16 @@ public:
     virtual ~Person(); // virtual destructor so that derived class can be handled properly
 
     // Getters
-    ErrorCode GetFirstName(std::string &oFirstName) const;
-    ErrorCode GetLastName(std::string &oLastName) const;
-    ErrorCode GetDOB(std::string &oDOB) const;
-    ErrorCode GetPhoneNumber(std::string &oPhoneNumber) const;
+    errorcode GetFirstName(std::string &oFirstName) const;
+    errorcode GetLastName(std::string &oLastName) const;
+    errorcode GetDOB(std::string &oDOB) const;
+    errorcode GetPhoneNumber(std::string &oPhoneNumber) const;
 
     // Setters
-    ErrorCode SetFirstName(const std::string &iFirstName);
-    ErrorCode SetLastName(const std::string &iLastName);
-    ErrorCode SetDOB(const std::string &iDOB);
-    ErrorCode SetPhoneNumber(const std::string &iPhoneNumber);
+    errorcode SetFirstName(const std::string &iFirstName);
+    errorcode SetLastName(const std::string &iLastName);
+    errorcode SetDOB(const std::string &iDOB);
+    errorcode SetPhoneNumber(const std::string &iPhoneNumber);
 
 protected:
     std::string _FirstName;

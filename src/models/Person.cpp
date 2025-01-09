@@ -13,61 +13,61 @@ Person::~Person()
 Person::Person(const std::string &FirstName, const std::string &LastName, const std::string &DOB, const std::string &PhoneNumber) : _FirstName(FirstName), _LastName(LastName), _DOB(DOB), _PhoneNumber(PhoneNumber) {}
 //---------------------------------------------------------------------------------------
 
-ErrorCode Person::GetFirstName(std::string &oFirstName) const
+errorcode Person::GetFirstName(std::string &oFirstName) const
 {
-    if (_FirstName.empty()) {logError("_FirstName is NULL");return ErrorCode::InvalidInput;};
+    if (_FirstName.empty()) {Error::logError("_FirstName is NULL",__FILE__,__LINE__);return errorcode::InvalidInput;};
     oFirstName = _FirstName;
-    return ErrorCode::Success;
+    return errorcode::Success;
 }
 //---------------------------------------------------------------------------------------
 
-ErrorCode Person::GetLastName(std::string &oLastName) const
+errorcode Person::GetLastName(std::string &oLastName) const
 {
-    if (_LastName.empty()) {logError("_LastName is NULL");return ErrorCode::InvalidInput;};
+    if (_LastName.empty()) {Error::logError("_LastName is NULL",__FILE__,__LINE__);return errorcode::InvalidInput;};
     oLastName = _FirstName;
-    return ErrorCode::Success;
+    return errorcode::Success;
 }
 //---------------------------------------------------------------------------------------
 
-ErrorCode Person::GetDOB(std::string &oDOB) const
+errorcode Person::GetDOB(std::string &oDOB) const
 {
-    if (_DOB.empty()) {logError("_oDOB is NULL");return ErrorCode::InvalidInput;};
+    if (_DOB.empty()) {Error::logError("_oDOB is NULL",__FILE__,__LINE__);return errorcode::InvalidInput;};
     oDOB = _DOB;
-    return ErrorCode::Success;
+    return errorcode::Success;
 }
 //---------------------------------------------------------------------------------------
-ErrorCode Person::GetPhoneNumber(std::string &oPhoneNumber) const
+errorcode Person::GetPhoneNumber(std::string &oPhoneNumber) const
 {
-    if (_PhoneNumber.empty()) {logError("_oPhoneNumber is NULL");return ErrorCode::InvalidInput;};
+    if (_PhoneNumber.empty()) {Error::logError("_oPhoneNumber is NULL",__FILE__,__LINE__);return errorcode::InvalidInput;};
     oPhoneNumber = _PhoneNumber;
-    return ErrorCode::Success;
+    return errorcode::Success;
 }
 //---------------------------------------------------------------------------------------
- ErrorCode Person::SetFirstName(const std::string &iFirstName)
+ errorcode Person::SetFirstName(const std::string &iFirstName)
  {
-    if (iFirstName.empty()) {logError("iFirstName is NULL");return ErrorCode::InvalidInput;};
+    if (iFirstName.empty()) {Error::logError("iFirstName is NULL",__FILE__,__LINE__);return errorcode::InvalidInput;};
     _FirstName= iFirstName;
-    return ErrorCode::Success;
+    return errorcode::Success;
  }
 //---------------------------------------------------------------------------------------
- ErrorCode Person::SetLastName(const std::string &iLastName)
+ errorcode Person::SetLastName(const std::string &iLastName)
  {
-    if (iLastName.empty()) {logError("iLastName is NULL");return ErrorCode::InvalidInput;};
+    if (iLastName.empty()) {Error::logError("iLastName is NULL",__FILE__,__LINE__);return errorcode::InvalidInput;};
     _LastName= iLastName;
-    return ErrorCode::Success;
+    return errorcode::Success;
  }
 //---------------------------------------------------------------------------------------
- ErrorCode Person::SetDOB(const std::string &iDOB)
+ errorcode Person::SetDOB(const std::string &iDOB)
  {
-    if (iDOB.empty()) {logError("iDOB is NULL");return ErrorCode::InvalidInput;};
+    if (iDOB.empty()) {Error::logError("iDOB is NULL",__FILE__,__LINE__);return errorcode::InvalidInput;};
     _DOB= iDOB;
-    return ErrorCode::Success;
+    return errorcode::Success;
  }
 //---------------------------------------------------------------------------------------
- ErrorCode Person::SetPhoneNumber(const std::string &iPhoneNumber)
+ errorcode Person::SetPhoneNumber(const std::string &iPhoneNumber)
  {
-    if (iPhoneNumber.empty()) {logError("iPhoneNumber is NULL");return ErrorCode::InvalidInput;};
+    if (iPhoneNumber.empty()) {Error::logError("iPhoneNumber is NULL",__FILE__,__LINE__);return errorcode::InvalidInput;};
     _PhoneNumber= iPhoneNumber;
-    return ErrorCode::Success;
+    return errorcode::Success;
  }
 

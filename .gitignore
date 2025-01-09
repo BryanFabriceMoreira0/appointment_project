@@ -21,3 +21,6 @@ DartConfiguration.tcl
 
 #data related folder 
 data/
+
+#Error log file 
+Error.log

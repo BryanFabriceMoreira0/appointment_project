@@ -3,6 +3,7 @@
 #include <memory>
 #include <sqlite3.h>
 
+
 // Wrapper classs to handle sqlite database connetion using singleton pattern
 class Database
 {
