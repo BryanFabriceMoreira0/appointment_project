@@ -25,8 +25,6 @@ Database::Database()
         // You could choose to throw an exception or handle it differently if needed.
         throw std::runtime_error("Failed to open database");
     }
-    else
-        fprintf(stderr, "Opened database successfully\n");
 }
 //----------------------------------------------------------------------------------------------------
 
@@ -35,6 +33,7 @@ Database::~Database()
     if (_db)
         sqlite3_close(_db);
 }
+
 //----------------------------------------------------------------------------------------------------
 
 /// @brief Get the instance of the database (singleton pattern)
@@ -43,4 +42,40 @@ Database &Database::GetInstance()
 {
     static Database instance; // This will ensure only one instance of Database for the whole class
     return instance;
+}
+
+/// @brief Create the patients table
+///@return The return code
+//----------------------------------------------------------------------------------------------------
+errorcode Database ::CreatePatientTable()
+{
+
+    std::string createTableSQL = "CREATE TABLE Patients (\
+    id INTEGER PRIMARY KEY, \
+    firstname TEXT NOT NULL, \
+    lastname TEXT NOT NULL, \
+    dob TEXT NOT NULL, \
+    phonenumber TEXT NOT NULL UNIQUE, \
+    medicalhistory TEXT \
+);";
+
+    char *errorMessage;
+    int rc = sqlite3_exec(_db, createTableSQL.c_str(), nullptr, nullptr, &errorMessage);
+    if (rc != SQLITE_OK)
+    {
+        std::cerr << "Error creating table: " << errorMessage << std::endl;
+        sqlite3_free(errorMessage);
+        Error::logError("CreatePatientTable FAILED");
+        return errorcode::FailedFunction;
+    }
+    else
+        std::cout << "Table created successfully!" << std::endl;
+
+    return errorcode::Success;
+}
+//----------------------------------------------------------------------------------------------------
+errorcode Database::InsertPatientData(std::shared_ptr<Patient> spPerson)
+{
+
+    return errorcode::Success;
 }
