@@ -17,7 +17,7 @@ errorcode Patient::GetFirstName(std::string &oFirstName) const
 errorcode Patient::GetLastName(std::string &oLastName) const
 {
     if (_LastName.empty()) {Error::logError("_LastName is NULL");return errorcode::InvalidInput;};
-    oLastName = _FirstName;
+    oLastName = _LastName;
     return errorcode::Success;
 }
 //---------------------------------------------------------------------------------------
